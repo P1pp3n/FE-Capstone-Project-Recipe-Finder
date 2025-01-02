@@ -1,0 +1,134 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(90deg, #e4e5e7, #eff1f1);
+  padding: 4rem 2rem;
+  color: rgb(27, 27, 27);
+  text-align: center;
+}
+
+.hero-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1rem;
+  color: #141414;
+}
+
+/* Popular Recipes Section */
+.popular-recipes {
+  padding: 4rem 2rem;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.popular-recipes .section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.popular-recipes p {
+  color: #1d1b1b;
+  font-size: 1rem;
+}
+
+/* Triangle Layout for Popular Recipes */
+.triangle-layout {
+  position: relative;
+  width: 100%;
+  height: 350px;
+  margin-top: 2rem;
+}
+
+.triangle-layout .circle-recipe {
+  position: absolute;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.triangle-layout .circle-recipe:hover {
+  transform: scale(1.1);
+}
+
+/* Similar Recipes Section */
+.similar-recipes {
+  padding: 4rem 2rem;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.similar-recipes .section-title {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.similar-recipes p {
+  color: #555;
+  font-size: 1rem;
+}
+
+/* Recipe Cards */
+.circle-recipe {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s;
+}
+
+.circle-recipe:hover {
+  transform: scale(1.1);
+}
+
+.circle-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.recipe-title {
+  margin-top: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #333;
+  text-align: center;
+}
+
+/* Recipes Display */
+.recipes-display {
+  display: grid;
+  gap: 1.5rem;
+}
+
+/* Loading Message */
+.loading-message {
+  font-size: 1.2rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Responsive Adjustments */
+@media (min-width: 768px) {
+  .popular-recipes .section-title,
+  .similar-recipes .section-title {
+    text-align: left;
+  }
+
+  .recipes-display {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}

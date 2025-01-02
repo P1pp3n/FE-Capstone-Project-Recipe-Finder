@@ -1,46 +1,84 @@
-import React, { useState, useEffect } from "react";
-import SearchBar from "./Components/SearchBar";
-import RecipeList from "./Components/RecipeList";
-import RecipeDetails from "./Components/RecipeDetails";
-import ErrorMessage from "./Components/ErrorMessage";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Navbar from "./Components/Navbar";
+import HomePage from "./pages/HomePage";
+import SearchResultsPage from "./pages/SearchResultsPage";
+import RecipeDetailsPage from "./pages/RecipeDetailsPage";
+import Footer from "./Components/Footer";
+import Favorites from "./pages/Favorites";
+
 
 const App = () => {
-  const [recipes, setRecipes] = useState([]);
-  const [selectedRecipe, setSelectedRecipe] = useState(null);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [error, setError] = useState("");
+  // Mock data for Homepage
+  const mockPopularRecipes = [
+    {
+      idMeal: "12345",
+      strMeal: "Pizza",
+      strMealThumb:
+        "",
+      strCategory: "Main",
+      strArea: "Italian",
+    },
+    {
+      idMeal: "67890",
+      strMeal: "Sushi",
+      strMealThumb: "sushi.jpg",
+      strCategory: "Appetizer",
+      strArea: "Japanese",
+    },
+    {
+      idMeal: "54321",
+      strMeal: "Tacos",
+      strMealThumb: "tacos.jpg",
+      strCategory: "Snack",
+      strArea: "Mexican",
+    },
+  ];
 
-  const fetchRecipes = async (query) => {
-    try {
-      const response = await fetch(
-        `https://www.themealdb.com/api/json/v1/1/search.php?s=${query}`
-      );
-      const data = await response.json();
-      if (data.meals) {
-        setRecipes(data.meals);
-        setError("");
-      } else {
-        setRecipes([]);
-        setError("No recipes found.");
-      }
-    } catch (err) {
-      setError("Error fetching recipes. Please try again later.");
-    }
-  };
-
-  const handleSearch = (query) => {
-    setSearchQuery(query);
-    fetchRecipes(query);
-  };
+  const mockSimilarRecipes = [
+    {
+      idMeal: "11223",
+      strMeal: "Pasta",
+      strMealThumb: "pasta.jpg",
+      strCategory: "Main",
+      strArea: "Italian",
+    },
+    {
+      idMeal: "44556",
+      strMeal: "Burger",
+      strMealThumb: "burger.jpg",
+      strCategory: "Fast Food",
+      strArea: "American",
+    },
+    {
+      idMeal: "77889",
+      strMeal: "Salad",
+      strMealThumb: "salad.jpg",
+      strCategory: "Healthy",
+      strArea: "Mediterranean",
+    },
+  ];
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-2xl font-bold mb-4">Recipe Finder</h1>
-      <SearchBar onSearch={handleSearch} />
-      {error && <ErrorMessage message={error} />}
-      <RecipeList recipes={recipes} onSelect={setSelectedRecipe} />
-      {selectedRecipe && <RecipeDetails recipe={selectedRecipe} />}
-    </div>
+    <Router>
+      <Navbar />
+      <Routes>
+        {/* Pass mockPopularRecipes and mockSimilarRecipes as props to HomePage */}
+        <Route
+          path="/"
+          element={
+            <HomePage
+              popularRecipes={mockPopularRecipes}
+              similarRecipes={mockSimilarRecipes}
+            />
+          }
+        />
+        <Route path="/search" element={<SearchResultsPage />} />
+        <Route path="/favorites" element={<Favorites />} />
+        <Route path="/recipe/:id" element={<RecipeDetailsPage />} />
+      </Routes>
+      <Footer />
+    </Router>
   );
 };
 
