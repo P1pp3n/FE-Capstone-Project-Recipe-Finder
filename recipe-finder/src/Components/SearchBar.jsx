@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "../Styles/SearchBar.css";
+import "../Styles/Searchbar.css";
 
 const SearchBar = ({ onSearch, placeholderText = "Search for recipes..." }) => {
   const [query, setQuery] = useState("");
