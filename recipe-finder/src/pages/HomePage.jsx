@@ -59,7 +59,6 @@ const Homepage = () => {
     
     //Navigates to search page
 
-
   const handleSearchClick = (event) => {
     if (event.key === "Enter") {
       navigate(`/search?query=${event.target.value}`);

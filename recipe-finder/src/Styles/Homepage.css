@@ -7,7 +7,7 @@ body {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(90deg, #e4e5e7, #eff1f1);
+  background: linear-gradient(90deg, #f8f9fa, #f9fcfc);
   padding: 4rem 2rem;
   color: rgb(27, 27, 27);
   text-align: center;
@@ -17,11 +17,13 @@ body {
   font-size: 2.5rem;
   font-weight: bold;
   margin-bottom: 1rem;
+  animation: fadeInDown 1s ease-in-out;
 }
 
 .hero-subtitle {
   font-size: 1rem;
   color: #141414;
+  animation: fadeInUp 1s ease-in-out;
 }
 
 /* Popular Recipes Section */
@@ -36,11 +38,14 @@ body {
   font-weight: bold;
   color: #333;
   margin-bottom: 0.5rem;
+  text-align: left;
+  animation: slideInLeft 1s ease-in-out;
 }
 
 .popular-recipes p {
   color: #1d1b1b;
   font-size: 1rem;
+  animation: slideInLeft 1s ease-in-out 0.5s;
 }
 
 /* Triangle Layout for Popular Recipes */
@@ -54,11 +59,12 @@ body {
 .triangle-layout .circle-recipe {
   position: absolute;
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .triangle-layout .circle-recipe:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 /* Similar Recipes Section */
@@ -73,11 +79,13 @@ body {
   font-weight: bold;
   color: #333;
   margin-bottom: 0.5rem;
+  animation: slideInRight 1s ease-in-out;
 }
 
 .similar-recipes p {
   color: #555;
   font-size: 1rem;
+  animation: slideInRight 1s ease-in-out 0.5s;
 }
 
 /* Recipe Cards */
@@ -85,11 +93,12 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  transition: transform 0.3s;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .circle-recipe:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
 
 .circle-img {
@@ -130,5 +139,50 @@ body {
 
   .recipes-display {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Animations */
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
   }
 }
