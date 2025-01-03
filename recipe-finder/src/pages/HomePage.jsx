@@ -80,7 +80,7 @@ const Homepage = () => {
           Discover Delicious Recipes
         </h1>
         <p className="hero-subtitle text-lg mt-4 text-gray-700">
-          Find your favorite dish and explore detailed recipes.
+          Search for your favorite dish and explore detailed recipes.
         </p>
         <input
           type="text"
