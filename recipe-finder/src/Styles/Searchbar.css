@@ -3,14 +3,14 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #fffaf0; /* Cream background */
+  background-color: #ffffff; /* Cream background */
 }
 
 /* Search Bar */
 .search-bar {
   padding: 1.5rem 2rem;
   margin: 2rem auto;
-  max-width: 800px;
+  max-width: 860px;
   background-color: #ffffff; /* White background for contrast */
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -26,7 +26,7 @@ body {
   padding: 0.75rem 1rem;
   font-size: 1rem;
   border: 2px solid #dcdcdc;
-  border-radius: 6px;
+  border-radius: 16px;
   transition: border-color 0.3s, box-shadow 0.3s;
 }
 
@@ -43,7 +43,7 @@ body {
   color: #ffffff;
   background-color: #6279c5;
   border: none;
-  border-radius: 6px;
+  border-radius: 11px;
   cursor: pointer;
   transition: background-color 0.3s, transform 0.2s;
   margin: 5px;
