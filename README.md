@@ -54,7 +54,7 @@ For this project, I will utilize the free API from **TheMealDB** to fetch and di
 - Optionally, I may explore more advanced state management tools like **Zustand**, **Redux**, or **mobx-state-tree** if the application grows in complexity.
 
 ### Deployment:
-- I will deploy the completed application on a free hosting platform like **Netlify** or **Vercel**.
+- I will deploy the completed application on a free hosting platform ; **Vercel**.
 - I will ensure the application is accessible and performs well in the deployed environment.
 - I will share the deployment link as part of my project submission.
 
