@@ -113,6 +113,13 @@ body {
   margin-bottom: 0.5rem;
 }
 
+.error-message {
+  color: red;
+  margin-top: 8px;
+  font-size: 0.9rem;
+}
+
+
 /* Responsive Design */
 @media (min-width: 768px) {
   .search-bar {

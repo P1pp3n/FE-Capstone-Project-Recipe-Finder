@@ -5,6 +5,7 @@ const SearchBar = ({ onSearch, placeholderText = "Search for recipes..." }) => {
   const [query, setQuery] = useState("");
   const [randomRecipes, setRandomRecipes] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
 
   // Fetch random recipes from TheMealDB API
   useEffect(() => {
@@ -30,12 +31,15 @@ const SearchBar = ({ onSearch, placeholderText = "Search for recipes..." }) => {
 
   const handleInputChange = (e) => {
     setQuery(e.target.value);
+    setError(""); // Clear the error when the user starts typing
   };
 
   const handleSearch = (e) => {
     e.preventDefault();
     if (query.trim()) {
       onSearch(query);
+    } else {
+      setError("Please enter a valid search term.");
     }
   };
 
@@ -53,6 +57,7 @@ const SearchBar = ({ onSearch, placeholderText = "Search for recipes..." }) => {
           Search
         </button>
       </form>
+      {error && <p className="error-message">{error}</p>}
 
       {/* Placeholder content for when no search is performed */}
       {!query && (

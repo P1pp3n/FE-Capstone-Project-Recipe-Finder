@@ -20,7 +20,11 @@ const Homepage = () => {
           )
         );
         const recipes = await Promise.all(responses.map((res) => res.json()));
-        setPopularRecipes(recipes.map((r) => r.meals[0]));
+        setPopularRecipes(
+          recipes
+            .filter((r) => r.meals && r.meals.length > 0)
+            .map((r) => r.meals[0])
+        );
       } catch (error) {
         console.error("Error fetching popular recipes:", error);
       } finally {
@@ -42,7 +46,11 @@ const Homepage = () => {
           )
         );
         const recipes = await Promise.all(responses.map((res) => res.json()));
-        setSimilarRecipes(recipes.map((r) => r.meals[0]));
+        setSimilarRecipes(
+          recipes
+            .filter((r) => r.meals && r.meals.length > 0)
+            .map((r) => r.meals[0])
+        );
       } catch (error) {
         console.error("Error fetching similar recipes:", error);
       } finally {
@@ -56,17 +64,14 @@ const Homepage = () => {
   const handleRecipeClick = (idMeal) => {
     navigate(`/recipe/${idMeal}`);
   };
-    
-    //Navigates to search page
 
-  const handleSearchClick = (event) => {
-    if (event.key === "Enter") {
-      navigate(`/search?query=${event.target.value}`);
+  // Navigates to search page
+  const handleSearchKeyDown = (event) => {
+    if (event.key === "Enter" && event.target.value.trim()) {
+      navigate(`/search?query=${event.target.value.trim()}`);
     }
   };
 
-  
-    
   return (
     <div className="homepage">
       {/* Hero Section */}
@@ -81,7 +86,7 @@ const Homepage = () => {
           type="text"
           placeholder="Search recipes..."
           className="search-box px-4 py-2 mt-6 border rounded-full shadow-lg text-gray-800"
-          onKeyDown={handleSearchClick}
+          onKeyDown={handleSearchKeyDown}
         />
       </header>
 
