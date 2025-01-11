@@ -80,7 +80,6 @@ For this project, I will utilize the free API from **TheMealDB** to fetch and di
 4. Run the project locally: `npm start`
 
 ## Deployed Project
-Check out the deployed version here: [Link to Deployed Project]
+Check out the deployed version here:(https://fe-capstone-project-recipe-finder-ur39.vercel.app/)
 
-## License
-This project is licensed under the MIT License.
+
