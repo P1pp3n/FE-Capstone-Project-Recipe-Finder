@@ -1,4 +1,6 @@
 # FE Capstone Project: Recipe Finder
+![image](https://github.com/user-attachments/assets/43bbb582-28e7-495f-b9d9-212817cf84ab)
+
 
 ## Project Overview
 As a frontend developer, I am designing and implementing a **Recipe Finder** application using **HTML**, **CSS**, **JavaScript**, **React**, and **Tailwind CSS**. The application will allow users to search for recipes based on dish names and view detailed information about each recipe, such as ingredients and preparation instructions.
