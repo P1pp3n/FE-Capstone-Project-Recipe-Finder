@@ -65,14 +65,9 @@ For this project, I will utilize the free API from **TheMealDB** to fetch and di
 ### Favorites List:
 - I will implement a feature that allows users to add recipes to a personal favorites list, stored in local storage.
 
-### Shopping List:
-- I will allow users to add ingredients from a recipe to a shopping list, with an option to edit quantities and print the list.
-
 ### Recipe Categories:
 - I will add predefined categories (e.g., Desserts, Appetizers, Main Course) and allow users to browse recipes by these categories.
 
-### Dark Mode:
-- I will add a dark mode feature to provide a better user experience in low-light conditions.
 
 ## Installation
 
